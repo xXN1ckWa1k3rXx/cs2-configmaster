@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2-Configmaster</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* 改为顶部对齐 */
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+
+            padding-top: 50px;
+            padding-bottom: 10%;
+        }
+        h1 {
+            color: #333;
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            margin-top: 0;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            width: 90%; /* 调整宽度 */
+            max-width: 600px;
+        }
+        .container h2 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+        .select-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .select-box {
+            margin: 10px;
+            text-align: center;
+            flex: 1 1 45%;
+        }
+        .custom-resolution-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 16px;
+            width: 100%; /* 调整宽度 */
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 16px;
+            width: 90%;
+        }
+        select:focus, input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .language-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .language-container label {
+            margin-right: 10px;
+        }
+        @media (max-width: 600px) {
+            .select-box {
+                flex: 1 1 100%; /* 小屏幕下每个选择框占据整行 */
+            }
+        }
+        .iframe-container {
+            border: 1px solid black; /* 黑色边框 */
+            width: 80%;
+            height: 1000px;
+            box-sizing: border-box; /* 包含边框在内的宽高计算 */
+            overflow: auto;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* 移除iframe自带的边框 */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">CS2-Configmaster</h1>
+    <h4 id="version">Version: 0.1b</h4>
+    <div class="language-container">
+        <label for="language-select">Language</label>
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+        </select>
+    </div>
+    <div class="iframe-container">
+        <iframe src="video.html"></iframe>
+    </div>
+
+</body>
+</html>
