@@ -31,4 +31,4 @@ function updateResolutionOptions() {
     });
 }
 
-// Initialize the resolution options on page loaddocument.addEventListener('DOMContentLoaded', updateResolutionOptions);
+// Initialize the resolution options on page load document.addEventListener('DOMContentLoaded', updateResolutionOptions);
