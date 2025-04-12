@@ -32,9 +32,9 @@
 
   <div class="container" style="margin-top:30px">
       <div class="row">
-          <div class="col-sm-4">
-              <h2>Video settings</h2>
-              <h5>Customize/Backup your video settings</h5>
+          <div class="col-sm-8">
+              <h2>Video/HUD settings</h2>
+              <h5>Customize/Backup your video and hud settings</h5>
           </div>
       </div>
   </div>
@@ -46,6 +46,13 @@
           <div class="col-sm-8">
               <!-- <h1><i class="fa-solid fa-compass-drafting"></i> Customize </h1> -->
               <h1><i class="fa-solid fa-box-open"></i> Customize </h1>
+
+              <div class="alert alert-info">
+                Presets have not been performance verified and need to be reset
+              </div>
+              <div class="alert alert-warning">
+                Presets is WIP, it will not override the setting.
+              </div>
 
               <ul class="nav nav-pills" >
                 <li class="nav-item">
@@ -116,6 +123,15 @@
         <div class="form-group">
           <div class="row">
             <div class="col">
+              <label for="display_mode">Display Mode</label>
+              <select class="form-control" id="display_mode_select">
+                <option value="windowed">Windowed</option>
+                <option value="fullscreen">Fullscreen</option>
+                <option value="noborder">Fullscreen (No border)</option>
+              </select>
+            </div>
+            
+            <div class="col">
               <label for="aspect_ratio">Aspect Ratio</label>
               <select class="form-control" id="aspect_ratio_select" onchange="resolution_update()">
                 <option value="16:9">Widescreen 16:9</option>
@@ -163,7 +179,7 @@
 
             <div class="col">
               <label for="refresh">Refresh rate</label>
-              <input type="text" class="form-control" id="refresh_input">
+              <input type="text" class="form-control" id="refresh_input" value="144">
             </div>
 
             <div class="col d-flex align-items-center">
@@ -175,7 +191,129 @@
           </div>
 
         </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label for="anti_aliasing">Anti-Aliasing</label>
+              <select class="form-control" id="anti_aliasing_select">
+                <option value="None">None</option>
+                <option value="CMAA2">CMAA2</option>
+                <option value="2xMSAA">2x MSAA</option>
+                <option value="4xMSAA">4x MSAA</option>
+                <option value="8xMSAA">8x MSAA</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <label for="global_shadow">Global Shadow Quality</label>
+              <select class="form-control" id="global_shadow_select">
+                <option value="low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Very_high">Very High</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label for="dynamic_shadows">Dynamic Shadows</label>
+              <select class="form-control" id="dynamic_shadows_select">
+                <option value="sun_only">Sun Only</option>
+                <option value="all">All</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <label for="model_texture_detail">Model/Texture Details</label>
+              <select class="form-control" id="model_texture_detail_select">
+                <option value="low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label for="texture_filtering">Texture Filtering Mode</label>
+              <select class="form-control" id="texture_filtering_select">
+                <option value="Bilinear">Bilinear</option>
+                <option value="Trilinear">Trilinear</option>
+                <option value="2x">Anisotropic 2X</option>
+                <option value="4x">Anisotropic 4X</option>
+                <option value="8x">Anisotropic 8X</option>
+                <option value="16x">Anisotropic 16X</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <label for="shader_detail">Shader Detail</label>
+              <select class="form-control" id="shader_detail_select">
+                <option value="low">Low</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label for="particle_detail">Particle Detail</label>
+              <select class="form-control" id="particle_detail_select">
+                <option value="low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Very_high">Very High</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <label for="ambient_occlusion">Ambient Occlusion</label>
+              <select class="form-control" id="ambient_occlusion_select">
+                <option value="disable">Disabled</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <label for="hdr">High Dynamic Range</label>
+              <select class="form-control" id="hdr_select">
+                <option value="performance">Performance</option>
+                <option value="quailty">Quality</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="fsr">FidelityFX Super Resolution</label>
+          <select class="form-control" id="fsr_select">
+            <option value="Disabled">Disabled (Highest Quality)</option>
+            <option value="Ultra_Quality">Ultra Quality</option>
+            <option value="Quality">Quality</option>
+            <option value="Balanced">Balanced</option>
+            <option value="Performance">Performance</option>
+          </select>
+        </div>
+
+        FidelityFX Super Resolution (FSR) is a technology similar to NVIDIA's DLSS, which uses upscaling to render frames at a lower resolution and then enlarge them to make the game appear to run at native resolution.
+
+        <h5>Using FSR may cause distant scenes to appear blurry, which could slightly diminish your gaming experience.
+        Since Counter-Strike 2 uses FSR 1.0, an older version of the technology, it might not significantly improve your performance.</h5>
       </div>
+    </div>
+
+    
+    <div class="text-center">
+      <button type="button" class="btn btn-primary" onclick="downloadConfig()">Generate Video Config</button>
     </div>
     
   </div>
@@ -191,6 +329,7 @@
     <p>CS2-Configmaster is not sponsored, endorsed, licensed by, or affiliated with Valve Corporation.</p>
   </div>
 
+  <script src="js/generateConfig.js"></script>
   <script src="js/resolution_update.js"></script>
 </body>
 </html>

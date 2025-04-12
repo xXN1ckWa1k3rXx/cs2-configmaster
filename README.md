@@ -5,16 +5,18 @@ Video settings / Gameplay settings configuration generation for Counter-Strike 2
 
 # What is this?
 
-Players can generate a unique settings cfg file, whether it is a video cfg or crosshair or console binds, or some tools
+Players can generate a unique settings cfg file, whether it is a video cfg or crosshair or console binds, or some tools and helping players get more advantages.
 
 Inspired by [mastercomfig for Team Fortress 2](https://comfig.app/)
 
 # When release?
 I can't give a final answer cuz I can't put all my energy into this project. this project will not have a final 1.0 due to the continuous improvement of the website and the coding of javascript.
 
-As the website was redesigned, the old video settings were moved to the old folder, including fixing the problem that the resolution select could not be set normally in the old main page.
+Website redesigned. Old page has been moved to the ["old" folder](./old/).
+All the old main page issues/bug has been fixed. New page's javascript still need to recode
 
-New page everything unavailable yet. Old page video settings available
+New page's video setting generate is completed but not sure if generate's config is correct
+**For more stable cfg generation go to [old page](./old/main.html)**
 
 # Known issues
-- The video page takes too long to load (Shouldn't happen in local). Maybe it's because too much webp is loaded and needs to be preloaded?
+- ~~The video page takes too long to load~~  (because uses fontawsome cdn)
